@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: rgb(34, 34, 34)
+}
+
+#animation {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    height: 50vh;
+}
+
+.stickman {
+    position: relative; 
+    left: calc(50% - 25px); 
+    transform: translateY(-50px); 
+}
+
+.head {
+    position: absolute;
+    z-index: 25;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    height: 50px;
+    width: 50px;
+    background: grey;
+    border-radius: 50px;
+    animation: head 1s infinite;
+}
+
+
+.torso {
+    position: absolute;
+    z-index: 0;
+    top: 45px;
+    right: auto;
+    bottom: auto;
+    left: 20px;
+    height: 95px;
+    width: 10px;
+    background: grey;
+    border-radius: 5px;
+}
+
+
+.left-arm {
+    position: absolute;
+    z-index: -1;
+    top: 15px;
+    right: 22px;
+    bottom: auto;
+    left: auto;
+    height: 90px;
+    width: 10px;
+    background: rgb(88, 88, 88);
+    border-radius: 5px;
+    transform: rotate(30deg);
+    animation: walk-left-arm 2s infinite;
+}
+
+
+.right-arm {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    right: auto;
+    bottom: auto;
+    left: 22px;
+    height: 90px;
+    width: 10px;
+    background: grey;
+    border-radius: 5px;
+    transform: rotate(-30deg);
+    animation: walk-right-arm 2s infinite;
+}
+
+.left-leg {
+    position: absolute;
+    z-index: -1;
+    top: 85px;
+    right: auto;
+    bottom: auto;
+    left: 30px;
+    height: 125px;
+    width: 10px;
+    background: rgb(88, 88, 88);
+    border-radius: 5px;
+    transform: rotate(-30deg);
+    animation: walk-left-leg 2s infinite;
+}
+
+.right-leg {
+    position: absolute;
+    z-index: 1;
+    top: 85px;
+    right: 30px;
+    bottom: auto;
+    left: auto;
+    height: 125px;
+    width: 10px;
+    background: grey;
+    border-radius: 5px;
+    transform: rotate(30deg);
+    animation: walk-right-leg 2s infinite;
+}
+
+.shadow {
+    position: absolute;
+    z-index: 0;
+    top: 155px;
+    right: -60px;
+    bottom: auto;
+    left: auto;
+    height: 1px;
+    width: 200px;
+    background: transparent;
+    box-shadow: 0px 27px 27px 3px rgba(0, 0, 0, 0.5);
+    animation: shadow 1s infinite;
+}
+
+@keyframes head {
+    0% {
+        top: 0px;
+        transform: rotate(0deg);
+    }
+    50% {
+        top: 5px;
+        transform: rotate(5deg);
+    }
+}
+
+
+@keyframes walk-left-arm {
+    0% {
+        transform: rotate(30deg);
+        right: 22px;
+    }
+    50% {
+        transform: rotate(-30deg);
+        right: -22px;
+    }
+    100% {
+        transform: rotate(30deg);
+        right: 22px;
+    }
+}
+
+@keyframes walk-right-arm {
+    0% {
+        transform: rotate(-30deg);
+        left: 22px;
+    }
+    50% {
+        transform: rotate(30deg);
+        left: -22px;
+    }
+    100% {
+        transform: rotate(-30deg);
+        left: 22px;
+    }
+}
+
+@keyframes walk-left-leg {
+    0% {
+        transform: rotate(-30deg);
+        left: 30px;
+    }
+    50% {
+        transform: rotate(30deg);
+        left: -30px;
+    }
+    100% {
+        transform: rotate(-30deg);
+        left: 30px;
+    }
+}
+
+@keyframes walk-right-leg {
+    0% {
+        transform: rotate(30deg);
+        right: 30px;
+    }
+    50% {
+        transform: rotate(-30deg);
+        right: -30px;
+    }
+    100% {
+        transform: rotate(30deg);
+        right: 30px;
+    }
+}
+
+
+@keyframes shadow {
+    0% {
+        right: -60px;
+        width: 200px;
+    }
+    33% {
+        right: -50px;
+        width: 180px;
+    }
+    66% {
+        right: -60px;
+        width: 200px;
+    }
+}
+
+.button-container {
+    position: fixed; 
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    position: absolute;
+    left: calc(50% - 50px);
+    transform: translateY(30%);
+}
+
+.circle {
+    position: relative;
+    width: 100px; 
+    height: 100px; 
+    background-color: grey; 
+    border-radius: 50%;
+}
+
+.triangle-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid rgb(85, 85, 85); 
+}
+
+.speed {
+    position: fixed;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: grey;
+    font-size: 35px; 
+    white-space: nowrap;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
